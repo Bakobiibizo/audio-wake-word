@@ -1,0 +1,7 @@
+evaluate
+transformers
+python-dotenv
+jiwer
+librosa
+soundfile
+pyaudio

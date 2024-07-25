@@ -8,10 +8,13 @@ from huggingface_hub import login
 from datasets import load_dataset, DatasetDict, Audio
 from transformers import WhisperFeatureExtractor, WhisperTokenizer, WhisperForConditionalGeneration
 from transformers import Seq2SeqTrainingArguments, Seq2SeqTrainer, WhisperProcessor
+import os
+
+login(os.getenv("HF_TOKEN"))
 
 
 # add token to push results to huggingface hub
-login(token="ADD YOUR HUGGING FACE TOKEN TO PUSH TO HUB")
+
 
 
 def load_data(dataset_name, split, subset=''):
@@ -246,3 +249,5 @@ if __name__=="__main__":
     # Word Error Rate metric
     metric = evaluate.load("wer")
     train(opt)
+
+    
